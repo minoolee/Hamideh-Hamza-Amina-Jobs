@@ -1,24 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+
+import {Route, BrowserRouter as Router, Routes} from "react-router-dom"
+
+import Navigation from './components/Navigation';
+import Profile from './components/Profile';
+import Teams from './components/Teams';
+import WeekPlan from './components/WeekPlan';
+import Workers from './employees.json';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+    <div>
+    <Profile/> 
+    <Navigation/>
+    <Routes>
+     <Route path="/teams/" element={ <Teams/>}/>
+     <Route path="/week-plan/" element={ <WeekPlan/>}/>
+   </Routes>
+   </div>
+   </Router>
+    
   );
 }
 
