@@ -5,7 +5,7 @@ input() {
    
   return (
     <div>
-     <form action=""></form>
+    
     </div>
   )
 }
